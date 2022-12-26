@@ -1,0 +1,10 @@
+Todays Agenda:
+==============
+  2:15-2:30->Recap
+  2:30-2:45->Global variable/Local Variable
+  2:45-3:30->Non-Primitive datatype,Operators
+  3:30-3:45->Classroom
+  3:45-4:45->Conditional statements,Jump Statements
+  4:45-5:15->Classroom
+  5:15-6:15->Arrays
+  6:15-6:30->Classroom
