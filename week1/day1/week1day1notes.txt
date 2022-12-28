@@ -1,0 +1,149 @@
+Today's Agenda:
+==============
+2:30-3:30->Core Java Introduction
+3:30-4:00->Breakout
+4:00-5:00->method,variables
+5:00-5:15->Breakout
+5:15-6:15->Primitive datatypes
+6:15-6:30->Breakout
+
+
+What is Automation ?
+   ->Automation can basically help to reduce the manual efforts which is
+     mechanically repeating
+   ->It can save lot of time
+   
+Why Java?What is Java?
+    Java is a programming language
+	Java is the predominantly used language in Selenium
+	It has lot of libraries
+	It is open source 
+
+JDk:
+====
+   Java Development Kit->JRE+JVM
+   JRE-Java RunTime Environment
+   JVM-Java Virtual Machine
+IDE:
+===
+   Integrated Development Environment
+   
+   
+	
+	
+	
+   
+   
+
+
+
+
+
+How to create a Maven Project?
+=============================
+   File->New->Project->Maven->Maven Project->Next>Click Create Simple project
+   Checkbox->Next->Group Id->Artifact Id->Finish
+   
+What is a package?
+    ->It is a folder to organize all your codes
+	->Naming Convention for a package->start with LowerCase 
+	->make it meaningful
+How to create a package?
+=======================
+   -Right Click ->src/main/java->New->Package->name of the package->Finish
+
+Class:=
+======
+    Class is a testcase->Techically Class is a java file
+What can be inside a class?
+     ->Constructor
+     ->methods
+     ->variables
+Classroom:
+==========
+ -Create a new package(week1.day1)
+ -Create a new class(FirstCode)
+ -Create a main method using shortcut
+ -write a syso statement as This is my FirstCode
+ ->Print in the console
+ 
+Method:
+=======
+   ->It is an action
+   ->method is a smaller line of code that does some specific operations
+   ->lowerCase and the next word should be in upperCase(CamelCase)
+
+Syntax:
+=======
+   1)access modifier
+   2)return type
+   3)name
+   4)input arguments
+  This is method signature
+  
+How to create a method inside a class?
+======================================
+   1)type methodName ->ctrl+space->Enter->
+   2)Write a print statement inside a method block
+
+How to create an Object:
+========================
+  ->Object is a reference 
+  -Classname objectName=new Classname();
+   
+
+Classroom:
+==========
+    Create a class Mobile
+	Create methods
+	   -sendSms
+	     print some text message
+	   -takeSnapShot
+	     print some text message
+	Create an object and execute from another class	 
+  
+Primitive datatypes:
+===================
+    int
+	short
+	long
+	float
+	double
+	boolean
+	char
+
+Access modifier:
+===============
+   It specifies who can access and who cannot
+   
+   public   - anyone can access
+      It is accessible by any classes inside the package and outside the package
+   private  - Only you can access
+       It is accessible by only that class
+   protected
+      
+   default
+      It is accessible by any classes within the package
+	  Outside the package default methods are not accessible
+	  
+Global variable;
+===============
+  It belongs to all the methods
+
+Local Variable:
+================
+   It is accessible only inside that methodName
+
+Classroom:
+==========
+Create a class Calculator
+create a method
+   sub(void)
+   mul(int a,int b)
+    put a return statement
+Create a main method
+Create an object and access all the methods
+Print in the console	
+
+
+
