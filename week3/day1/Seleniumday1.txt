@@ -1,0 +1,210 @@
+wait
+ -----
+ to addressing timinig difference between script & application
+ 
+ Selenium wait
+ --------------
+ 1.Implicitly Wait
+ 2.Explicitly wait
+  
+  
+  Java Wait(Explicitly wait)
+  ---------
+  Thread.sleep(time)--->it will slow down my execution
+  -this has to be applied wherever need we can use.
+  -single line
+  -it will wait till the end of the time limit
+
+ 1.Implicitly Wait
+ 30sec
+ -its a common wait for all locators (FindElement ,FindElements)
+ -it used to avoid NoSuchElementException when the element is loaded little late
+ -if the element is loaded with in given time,it will locate the element immediately
+ -Best pratice to apply ImplicitWait at the starting of your script.
+ 
+ XPath:
+ -----
+ xml path
+ Locate exact match
+ Types:
+ 
+ Absolute xpath-->not very much used
+ -start with root  tag, single slash
+ /html/body/div[2]/div[2]/div/form/p[1]/input
+ -will take time to write the xpath
+ -might fail when the page design is getting changed
+ 
+ Relative xpath
+ ---------------
+ Most preferred xpath
+  start // slash followed by the tagname of the webElement
+ syntax:
+ //tagname
+ 
+ Attribute Based xpath:
+ -----------------------
+ syntax:
+ 
+ //tagname[@attributeName='attributevalue']
+ example:
+ //input[@class='decorativeSubmit']
+ 
+ Partial Match:
+ --------------
+ keywod: contains
+ syntax:
+ -------
+ //tagname[contains(@attributeName,'attributevalue')]
+ 
+ Text based xpath:
+ ------------------
+ syntax:
+ //tagname[text()='text value']
+ example:
+ //a[text()='Leads']
+ 
+ Partial Match:
+ --------------
+ keywod: contains
+ //tagname[contains(text(),'text value')]
+ 
+ Collection Based xpath:
+ ------------------------
+ using index
+ xpath index start from --->1
+ syntax:
+ (anyxpath)[index]
+ (//input[@class='inputLogin'])[1]
+ (//span[contains(@class,'a-size-medium')])[1]//partial and attribute and collection
+ 
+ 
+ 
+ Advanced xpath:
+ ---------------
+ Axes xpath:
+ -----------
+ Relation ship:
+ --------------
+<p> and <label> -> Parent & Child
+
+<form> and <label> -> GrandParent & GrandChild
+
+top -> elder
+bottom -> younger
+
+-> Elder Sibling & Younger Sibling
+
+<p>   same parent children
+<label> 
+<input> 
+</p>
+
+ -> Elder Cousin & Younger Cousins	
+<p>  different parent
+<label>(username) 
+</p>
+<p>
+<label>(password)
+<p>
+ parent to child
+ -------------------
+ <form>
+    <p>
+    <p>
+    <p>	
+syntax:
+--------
+	parent xpath/tagname of child [index]
+example:
+---------
+	//p[@class='top']/input 
+ 
+child to parent:
+-----------------
+child xpath/..
+example:
+---------
+//input[@id='password']/..
+		(or)
+syntax:
+--------
+ child xpath/parent::tagname of parent
+example:
+--------
+ //label[text()='Username']/parent::p
+ 
+GrandParent to GrandChild
+-------------------------
+syntax:
+--------
+GrandParent xpath//tagname of GrandChild
+example:
+--------
+ (//form[@id='login'] //input)[3]
+ 
+GrandChild to GrandParent
+--------------------------
+Syntax:
+-------
+GrandChild xpath/../..		
+		//input[@id='password']/../..
+				(or)
+syntax:
+-------
+ GrandChild xpath/ancestor::tagname of GrandParent
+example:
+---------
+ //input[@class='decorativeSubmit']/ancestor::form
+
+Sibling:
+--------
+ Elder to younger--Top to bottom(following)
+ ------------------------------------------
+ syntax:
+ -------
+ Elder sibling xpath/following-sibling::tagnameof younger
+ 
+ example:
+ --------
+ //label[@for='username']/following-sibling::input
+ 
+ younger to elder---bottom to Top(preceding)
+ --------------------------------------------
+ syntax:
+ --------
+ younger sibling xpath/preceding-sibling::tagname of elder 
+
+example:
+--------
+  //input[@id='username']/preceding-sibling::label
+ 
+Cousins
+--------
+Elder to younger Cousins--Top---to bottom
+----------------------------------
+ 
+syntax:
+-------
+ elder cousin xpath/following::tagnameof younger
+
+example:
+--------
+ (//label[text()='Username']/following::input)[3]
+ 
+younger to Elder Cousins
+------------------------
+syntax:
+-------
+ younger cousin xpath/preceding::tagnameof elder cousin
+
+example:
+--------
+ (//input[@class='decorativeSubmit']/preceding::input)[1]
+ 
+following -> It will find the immediate match
+preceding -> It will find the first matching tag from the root tag
+
+Class Room 1:
+https://www.indusgo.in/
+
+https://www.air.irctc.co.in/
