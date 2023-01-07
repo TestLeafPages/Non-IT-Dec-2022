@@ -1,0 +1,81 @@
+Today'S Agenda
+--------------
+Selenium Basics
+----------------
+Introduction
+Initial setup
+Handle the drop down
+
+What selenium web driver can do?
+-can automate only web based application
+-It can talk to browser -Chrome,firefox,IE,safari,egde,opera
+-Run in different of os-window,Mac,Linux,android,ios.
+-We can write the script in any languages-Java,C#,JavaScript,python,Ruby,Pearl..
+
+Manual testing:
+-We do repetitive Actions
+-Time consuming
+-complex to perform some calculation
+
+What we can't do?
+-can automate excel sheet?No!!window based(Java Library-Apache POI)
+-can it automate mainframe application?No!!window based(Java Library-winappdriver)
+-can it talk to databasse?No!!(Java Library JDBC)
+-can it automate mobile app?No!!(APPIUM)
+-can it do perfermance testing?No!!(Jmeter/LoadRunner)
+-can it do API Testing?No!!(Selenium v4 CDT-partially)
+Automation tool
+----------------
+UFT-MicroFocus-Licensed have to pay
+Selenium-no open source
+puppeteer-Google
+cypress
+playwright
+Class
+------
+public class Classname{
+
+main ctrl+space+enter
+}
+1.create a Maven project
+2.pom.xml-dependency-selenium-java , webdriverManager
+3.Create a package
+4.Create class
+
+Html
+<></>
+<html>
+<body>
+<head>
+Locators
+------------
+we have 8 locators
+1.id
+2.name
+3.linkText---<a> with black text(link href)
+4.classname
+5.tagname
+6.xpath
+7.partial linktext
+8.css selector
+
+Tags
+-----
+purple clour---<tag>
+orange colour---Attribute(id name class)
+Blue colour----Attribute value
+Black colour ----in between the tag---text
+Handle the drop down
+----------------------
+By using Select class
+inside the dom tag name is <select>
+Howto handle the drop down
+1.SelectByVisibleText--black colour text
+2.SelectByValue---blue in colour
+3.SelectByIndex
+
+ClassRoom:
+1.Load the url(http://leaftaps.com/opentaps/control/login)
+2.Enter the username(demosalesmanager)
+3.Enter the password(crmsfa)
+4.Click the Login button
