@@ -1,0 +1,69 @@
+String
+------
+sequence of character
+'T''E''S''T'
+Testleaf
+int float char
+
+String name="Testleaf";----Literal
+
+String fname="TestLeaf";
+
+String company=new String("Testleaf")---->object
+
+
+OOPs:
+object oriented programming
+class:
+blueprint
+object:
+behavior
+Inheritance
+Inheritance is a concept where building relation between 2 similar class(parent to child)
+common function
+duplicate 
+reduce code
+Types:
+Single inheritance father extends grand father
+Multilevel inheritance--I extends father extends grand father
+Multiple inheritance--->not support by java we can use interface
+keyword extends
+java class by default extends object class
+
+ClassRoom 3:
+Class GrandParent ---three methods(house)
+Class Parent---two method(house)
+Class child---one method(house)
+
+create obj in child class and check the hierarchy
+
+Polymorphism
+refers to ability of a class to provide different implementation of a method
+same action in different way
+poly----Many
+morphs---form
+Types:
+overloading
+
+Static polymorphism/compile time 
+two or more method methods in same class different of argument and different data type
+java exampl:
+subString(start index)
+subString(start index,end index)
+Indexof(int ch)
+Indexof(String,index)
+Selenium:
+frame(index);
+frame(id/name);
+frame(WebElement)
+
+overriding
+Dynamic polymorphism/RunTime polymorphism
+
+same method name same argument but different class
+when 2 or more methods are with in different class
+but inherited between them
+signature is same
+but logic is different
+
+sub class method overriding that from parent class
