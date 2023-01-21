@@ -1,0 +1,119 @@
+Abstraction:
+Hiding something.
+Display only the relevent information to user and hide irrelevent feature.
+
+---->Interface
+unimplemented method
+class to interface implements(keyword)
+class to class extends
+interface to interface extends
+--Design document/Blue print
+--Architect design the plan
+--Implement to make work
+--100% abstract()1.7
+--After 1.8,few changes
+--clean design and code principle
+--cannot instantiate the interface(cannot create object)
+
+Selenium example:WebDriver,SearchContext,Alert,WebElement
+
+Java example:List,Set,Map
+
+
+---->Abstract Class
+
+Selenium example:WebDriverManager,By
+---->Concrete class
+
+Concrete class vs AbstractClass vs Interface
+
+-Not fully ready(Implemented +abstract)
+-It is not mandatory to implement all methods of interface
+-keyword of the class :abstract
+-we can have our own abstrct method
+-if you write an abstract method it is mandatory to add abstract keyword
+-cannot instantiate the abstract class(cannot create object)
+
+ClassRoom 1:
+Abstraction
+===========
+Interface :Mobile
+Methods   :version()
+     
+Interface :Laptop
+Methods   :windows()
+
+AbstractClass:TeleVision
+Methods   :Implement method andriod() and un implemented method as brand()
+  
+Execution class:Electronics  
+Implement all the methods of interface and abstract class in Electronics class
+
+Java Keyword:
+static
+variable
+method 
+class
+
+final 
+-----
+its a keyword used to apply some restriction to the user
+cvv-123
+
+final can applied to classes,method,variable
+
+1.final variable-constant you cannot changes the value
+2.final method-you cannot override the final method
+3.final class-you cannot extends the final class
+
+
+Arrays:
+-------
+fixed in size
+int[] count=200;
+a[0]=
+a[99]=
+memory waste
+Collection:
+Introduction:
+To store and manipulate the group of object.
+Collection is an interface
+Dynamic size(increase and decrease)
+Types:
+---List
+---Set
+---Map
+
+List
+----
+is an interface
+Dynamic size
+Insertion order-LIFO
+Allow duplicate
+we need implementation class
+   ---ArrayList--work based on index ,start from 0 ....n
+   ---LinkedList--Node
+   syntax:
+   List<wrapperclass> lstname=new ArrayList<wrapperclass>();
+   <wrapperclass>----generic
+   Example:
+   List<String>lst=new ArrayList<String>();
+   
+   
+   Data type       wrapperclass
+   
+   int               Integer
+   
+   short              Short
+   
+   long                Long
+   
+   float               float
+   
+   double              Double
+   
+   char                Character
+   
+   String               String
+   
+   boolean            Boolean
