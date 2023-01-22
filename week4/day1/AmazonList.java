@@ -33,7 +33,7 @@ step5:Print the price in order
 		for (int i = 0; i < price.size(); i++) {
 			String num = price.get(i).getText();
 		List<String> lst=new ArrayList<String>();//Store String of data into list
-		for (int j = 0; j < num.length(); i++) {
+		for (int j = 0; j < num.length(); j++) {
 			lst.add(num);
 		}
 		Collections.sort(lst);
