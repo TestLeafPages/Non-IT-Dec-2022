@@ -1,0 +1,223 @@
+Collection:
+Interface
+Dynamic size
+Group of obj
+Types:
+List
+=====
+Interface
+allow duplicate
+Insertion order
+single dimension
+implementation class
+1.ArrayList
+index start from 0 a[0]=1;
+
+a[0]=1;
+a[1]=2;
+a[2]=6;
+a[3]=4;
+a[4]=5;
+
+search a[3]=? 4
+
+2.LinkedList
+Insertion order
+node
+List<String> lstname=new ArrayList();
+lstname.add();
+lstname.remove();
+lstname.clear();
+lstname.contains();
+lstname.size();
+lstname.isEmpty();
+lstname.get(indext);
+Collections.sort(lstname);
+
+Set
+===
+-Is also interface
+-Not allow duplicate(only unique)
+-single Dimension[]
+String[]={};
+-Dynamic Array
+
+-Implementation class
+1.HashSet
+
+using Hasing algorithm 
+
+Random result/fast result
+
+2.LinkedHashSet
+Maintain insertion order
+
+3.TreeSet
+Number order,Alphabetic order----->Ascii order
+syntax
+======
+Set<wrapperclass>setname=new Implementation class<wrapperclass>();
+setname.add();
+setname.remove();
+setname.clear();
+setname.isEmpty();
+setname.contains();
+setname.get();--->implementation class????
+forEach loop
+
+
+
+
+
+
+
+
+Alert (Selenium WebDriver)
+
+- Modal Dialog
+- Not inspectable (it is javascript not a html code)
+
+
+Types
+
+- Simple Dialog (Only one option)   - Information !
+- Confirm Dialog (2 options)    - Confirmation !
+- Prompt Dialog (Text Box + 2 Boolean) - Data Collection + Confirmation !
+
+
+Methods
+
+- accept    (Positive Action)
+- dismiss   (Negative Action)
+- sendKeys  (Type value on the prompt text) -- always clear before type
+- getText   (Read the title and not the domain)
+syntax:
+driver.SwitchTo().alert();
+Limitation
+
+- You cannot take snapshot of the alert 
+
+Exception
+- If you try interacting with DOM element without closing alert: UnhandledAlertException
+- If you are interacting with an alert through code but alert did not appear: NoAlertPresentException
+
+Sweet Alert - inspectable, Inspect -> findElement -> Click ! Can take snap !
+ driver.findElement(By.locator("")).click();
+	
+	
+
+Alert alert = driver.switchTo().alert();
+
+alert.accept();
+
+alert.dismiss();
+
+Frame
+
+- HTML element that helps developers to organize the set of elements
+- iframe (tag) that means it is in-line frame (frame / frameset)
+
+
+NoSuchElement
+
+- Either your locator is wrong 
+- Or the element may be living inside the frame
+
+Exception
+
+- NoSuchFrameException
+
+Overloading
+
+- frame(int index) // this is more than enough !
+- frame(String nameOrId)
+- frame(WebElement ele)
+
+Come out of the frame
+
+- switch to defaultContent
+------------------------------------------------------
+Window / Tab
+================
+- Window or Tab is technically same
+- Window / Tab -> URL / browser controls.
+
+Challenges
+
+- Window URL / Title / Sequence Number can change
+- So, how to find the window uniquely?
+
+Selenium Way
+
+- Every new window -> tag it -> new WindowHandle -> String (unique)
+CDwindow-8511B0C36AFC6FB2CDC63DB23E2E25DC
+CDwindow-AB18FDB93805BAFE24FD426FF51E0CA7
+
+
+Exception
+
+NoSuchWindowException
+
+Close and Quit
+
+How to swtitch to a new window ?
+
+- getWindowHandles()
+- Convert Set to List
+- Pick the particular window using get(index)
+- Switch to the window using the handle
+- Close or Quit
+
+open window will be closed by driver.close();
+To close all the open window driver.quit();
+How to switch to a new window:
+-------------------------------
+1.how to get the reference?
+-getWindowHandle()---when ever u open the window
+to get currrent window reference
+
+-getWindowHandles()--to get the reference of all window open
+
+2.How to switch the control
+getWindowHandles() return as a Set--remove the duplication
+create a list
+Two window get()
+driver.switch().window(lstname.get(0))
+convert set into list
+pick the particular window using get(index)
+apply the driver.switch().window(lstname.get(0))
+close/quit
+
+
+
+
+ClassRoom 1:
+1.Load the url: https://jqueryui.com/selectable
+2.Handle the frame 
+3.Select the Element from item 1 to item3
+
+ClassRoom 2:
+ClassRoom for Alerts and Frames:
+--------------------------------
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm
+Click Try It Button
+Click OK/Cancel in the alert
+Confirm the action is performed correctly by verifying the text !!
+ Hint:
+-----
+Switch to the frame
+Then click Try It with xpath
+Switch to the alert
+Then perform accept / dismiss
+Get the text using id 
+Verify the text based on the action
+
+ClassRoom 3:
+Alerts and Window handling
+---------------------------
+1. Load https://www.irctc.co.in/
+2. Click on OK button in the dialog  
+3. Click on FLIGHTS link            
+4. Go to the Flights tab( second window)
+5. Print the customer care email id
+6. Close the First tab(Train ticket booking) alone
