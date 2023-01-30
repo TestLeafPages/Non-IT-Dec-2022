@@ -1,0 +1,202 @@
+Actions Class
+----------------
+Advanced user Interaction
+-------------------------
+click
+sendkeys
+clear
+getText()
+getAttribute()
+
+Mouse and keyboard
+Actions class
+Action class is not throw any exception
+1.MouseHover
+-------------
+Actions builder=new Actions(driver);
+builder.moveToElement(webElement).perform();
+
+2.Droppable
+Actions builder=new Actions(driver);
+builder.dragAndDrop(source,destination).perform();
+
+3.Draggable
+Actions builder=new Actions(driver);
+builder.dragAndDropBy(webElement,x,y).perform();
+Drag and DropBy
+
+4.RightClick
+Actions builder=new Actions(driver);
+builder.contextclick(webElement).perform();
+
+5.DoubleClick
+Actions builder=new Actions(driver);
+builder.doubleclick(webElement).perform();
+
+6.ScrollDown
+Actions builder=new Actions(driver);
+builder.scrollToElement(webElement).perform();
+7.Select
+--------
+Actions builder=new Actions(driver);
+
+// Step1 : Create object for Actions class
+		Actions builder = new Actions(driver);
+
+// step2: use appropriate method to do the action
+builder.clickAndHold(WebElement).moveToElement(WebElement).release().perform();
+
+// perform() is mandatory at the end of actions
+
+8.sort the element:
+Actions builder=new Actions(driver);
+builder.dragAndDrop(item6,item1).dragAndDrop(item2,item 3).perform
+builder.dragAndDropBy(webElement,x,y).perform();
+
+9.keys action:
+
+builder.keyDown(Keys.CONTROL).click(WebElement).click(WebElement).click(WebElement).click(WebElement).keyUp(Keys.CONTROL).perform();
+				other method:
+builder.clickAndHold(item1).moveToElement(item4).release().perform();
+Keyboard Methods:
+======================
+sendKeys(keysToSend) : sends a series of keystrokes onto the element
+keyDown(theKey) : Sends a key press without release it. Subsequent actions may assume it as pressed. (example: Keys.ALT, Keys.SHIFT, or Keys.CONTROL)
+keyUp(theKey): Performs a key release
+
+Mouse Actions:
+==========================
+
+click (): Simply click on element
+doubleClick (): Double clicks onElement
+contextClick() : Performs a context-click (right click) on an element
+clickAndHold(): Clicks at the present mouse location (without releasing)
+dragAndDrop(source, target): Invokes click-and-hold at the source location and moves to the location of the target element before releasing the mouse. source – element to grab, target – element to release
+dragAndDropBy(source, xOffset, yOffset): Invokes click-and-hold at the source location and moves to the location and release
+moveToElement(toElement): It shifts the mouse to the center of the element
+release(): Releases the depressed left mouse button at the existing mouse location
+
+
+=====================================================
+
+Constructor:
+-----------------
+A Constructor like method
+Constructor has a same name like class
+when object for the class create --->Constructor invoked
+new keyword-->invoke constructor and allocate some memory for the object
+java compiler-->default constructor
+constructor Chain--->this keyword,super keyword
+types:
+1.No arg(default constructor)
+className();
+2.Parameterized constructor
+className(String name,int id)
+
+
+syntax:
+public ClassName();
+
+//Create obj for class
+ClassName obj=new ClassName();
+
+method
+public void menthodName(){
+}
+this:
+refer current class variable
+refer current class method
+used for constructor chaining
+pass arg in method can use this
+return current class instance
+this-->same
+Super-->call the super class constructor
+access variable from the parent
+invoke constructor of parent class
+access method from parent
+==================================================================
+Wait -> to address timing difference between the script & application
+	    to make the script and application in sync
+		
+Selenium Wait:
+---------------
+1. Implicitly Wait 
+2. Explicitly Wait		
+
+Java Wait: (Explicit Wait)
+-----------
+Thread.sleep(time) -> It will slow down the execution
+					  This has to be applied wherever needed
+					  It will wait till the end of the time limit
+					-sometimes immediately
+                    -sometimes may take longer
+
+best approach:Interact as soon as ready
+
+FluentWait(super class)
+
+WebDriverWait(sub class)	
+
+solution:every 500 ms (polling interval) the code will go and check if the expected condition
+is met or not.
+
+if it is met--> perform the action
+not met-->sleep for another500ms before poll again
+
+after crossing the max time-->it throw Exception TimeoutException				
+					  
+					  
+Implicitly Wait:
+-----------------
+-driver.manage().timeout().implicitlyWait(Duration.ofSeconds(30));
+- Its a common wait for all the locators in my script (findElement & findElements)			
+- It is used to avoid the NoSuchElementException when the element is loaded little late
+- If the element is loaded within the given time limit, it will locate element immediately and 
+  proceed with next step in the script
+- If the element is not loaded within the given time limit, it will throw NoSuchElementException
+findElements--->empty list
+- Best practice is, apply ImplicitlyWait at the starting of your script
+
+Explicit Wait
+=============
+When you like to wait for element behaviour!!
+1.to become clickable
+2.element to become visible
+3.element to become enable
+4.alert to appear
+5.window to appear
+ClassRoom:
+Load the url:https://leafground.com/waits.xhtml
+Wait for Invisibility (1 - 10 Sec)
+
+Exception:
+=========
+ --->it is an abnormal behaviour which disturb the execution
+ --->It stop the execution of the program  when itis fail
+ 
+ types of failure
+ -----------------
+ Error
+ Exception
+ 
+ Types
+ =====
+ 1.Checked exception/compile time exception
+ 2.Unchecked exception/Run Time exception
+ 
+ How to handle the exception:
+ Two ways:
+ 1.By your self(try catch finall)
+ 
+ try-keyword
+ try alone we con't use
+ catch:
+ block of code to handle the exception
+ catch block alone you con't use
+ 2.you give to someone(throw,throws)
+ 
+noSuchElement
+staleElement
+nosuchframeexeception
+nosuchwindowexeception
+NullPointerException
