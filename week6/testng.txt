@@ -1,99 +1,79 @@
-TestNG
-------
-Is an automation testing framework. NG-Next generation
+Learn Attributes:
+priority:
+---------
+1.Priority- will work with in the class
+2.Lower priority will be scheduled first-1,0,1....
+3.useful for a developer
+enabled/@ignore    
+-----------------
+Whether methods on this class/method are enabled.
+enabled is at method level
+@ignore can use at the class level
+Default value-True
 
-Junit-Java
+3.invocationcount: 3 c e d-1s
+the number of times this method should be invoked
+Use:you like to create data  for same information
 
--It is a open source framework
-1.Has a feature to perform sequential test execution one by one.
-2.Has a feature to perform parallel test execution-3 three browser
-3.Gives test execution status(pass/fail)
-4.Gives test execution summary report(html report)-index.html
-5.support data driven to execute test with multiple set data @Dataprovider
-6.support cross browser testing
-7.To Control the execution flow by annotation and attribute.
-8.Assertion to perform validation and verification.
-9.Automatic retry of failed test case-network
+invocationTimeOut:
+The maximum number of milliseconds this test should take for 
+cumulated time of all the  invocationcount.
+This attribute will be ignore if invocation count is not specified
+Do not use it.
 
-Software:
-TestNg plug-in
-TestNG maven dependency-->Library--->Required for developing TestNG Scripts 
+threadPoolSize-3
+The size of the thread pool for this method. The method will be invoked from multiple threads as specified by invocationCount.
+Note: this attribute is ignored if invocationCount is not specified
 
-Classroom:1
-========
-https://github.com/LeafPages/SelDec2022/blob/main/testcase.zip
-2. Download testcase.zip
-3. Extract the zip file
-4. copy the testcase folder
-5. paste it under scr/main/java
+4.dependsonMethods
+--------------------
+The list of methods this method depends on.
+delete----depends --->create
+alwaysrun:
+	If set to true, this test method will always be run even if it depends on a method that failed.
 
-Steps to convert standalone testcase into TestNG testcase
+
+priority vs dependsonMethods
+priority will work with in the class whereas dom--->across the classes
+priority will run even when previous priority fails but dom does not work
+
+Timeout:
+The maxmium number milliseconds this test should complete if not test fail.
+Parameterization:
+-No hard code of data inside the java class
+-preferred to automate them by passing from external source(excel,xml,json,db)
+ 2 types:
+ ---------
+ -static(parameter)
+ if it is common across multiple testcases then u can keep in xml
+ Example:url,username,password
+ 
+ 
+ -Dynamic(@DataProvider)
+ it is specific to testcase.cannot reuse most of them we have in java(excel)
+ Example:company name,firstname,lastname,phonenumber.........
+
+Steps to implement parameter
+1.Identify the data that need to be static in xml(url,username,password)
+2.Add the parameter tag for each one the data in xml file
+3.Map the parameter in the java class(projectspecificmethod) using @Parameters
+Note:the name is casesensitive so exactly the name match in th xml
+4.use that parameter inside the method using arguments
+Note:sequence matter but the name of the arguments does not matter
+5.Now,we can replace arguments with hard code of value
+you should always run in xml becoz of parameter
 ----------------------------------------------------------
-1. Remove static keyword from main method
-2. Remove String[] args argument
-3. Rename main() into meaningful method name
-4. Apply @Test on top of the method
 
-Class room-2
-=========
-Eecute the testcase Sequentially and parallel
-Steps: Select the testcases-->rightclick Testng-->convert to TestNg
-For Parallel-->select parallel mode-Classes 
-add verbose
-Execute from Xml file
-
-Classroom 3:(Annotation)
-==========
-Create a common class
-Move all the common steps to common class (remove those steps  in the testcases)
-Use @Before and @After Method annotation to define your precondition and post condition Methods
-Extend the common class to leads classes
-
-How to run multiple testcase through TestNg?
-1.Select the testcase that you like to run together
-2.Convert them as testng---->Convert TestNg
-3.This will generate the testng xml file
-4.click the xml file and open the source tab
-ClassRoom 2:
-sequential
-Convert a xml that can run sequential
-
-Xml Structure:
-<Suite>----->all testcase together in one xml
-
-   <Test>---->Create Lead
-   
-        <Class>---->individual java file
-		 
-		     @Test
-			 
-			 <method>
-			 
-			 </method>
-			 
-		</class>
-		
-	</Test>
-	
-</suite>
-		
-		Annotation Structure:
-		
-	@BeforeSuite-----Report initialization
-	
-	  @BeforeTest-----Data connection(db,excel)
-	  
-	      @BeforeClass---add the information of testcase to report(author,test,category)
-		   
-		      @BeforeMethod----Launching the browser
-			  
-			  @Test(Mandatory)
-			  
-			  @AfterMethod-----close the browser
-			  
-		  @AfterClass----close
-		 
-	  @AfterTest-------close the db connection
-	  
-	  
-    @AfterSuite------close the report
+Steps to implement DataProvider
+==================================
+1) Identify the data that are need to be dynamic for the particular testcase
+    - Create Lead : companyName, firstName, lastName....
+    - Edit Lead: phoneNumber, companyName.....
+2) Create a method to pass data with @DataProvider annotation
+3) Create Input array with number of columns (number of data / fields) and number of rows
+    - Make sure the index starts at 0
+4) Return data back to the calling class (return)
+5) Receive this data in the testcase
+    - use dataprovider attribute
+    - Use that arguments inside the method
+6) Finally, replace the hard coded value.
