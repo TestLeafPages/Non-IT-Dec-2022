@@ -1,0 +1,63 @@
+DataProvider:
+Multiple test data
+External source-excel,db
+
+Microsoft excel
+-Not a direct java library
+-Apache POI(Accessing Ms office software)
+How to read the data from excel:
+Extension:.xls-2003,.xlsx,.xlsm
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>5.2.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>5.2.2</version>
+</dependency>
+
+WorkBook(file name with ext .xlsx)
+
+    --WorkSheet
+	
+	 ---Rows
+	 
+	 ---cell(column)
+
+
+XSSFWorkBook(with ext of .xlsx)
+ 
+   XSSFWorkSheet
+   
+   XSSFRow
+   
+   XSSFcell
+   
+   
+  Steps to read the data from excel:
+  1.Open the workbook using file name and path
+  2.Go to specific sheet(by name,index)
+  3.Go to specific row(by index)
+  4.Go to specific cell(column)-by index
+  5.Read the data from excel
+  
+  
+  Integration Apache POI with TestNG
+  1.convert the method with return type as String[][]
+  2.Make sure to push all the excel data to array
+  3.comment/delete hard code data of data provider and replace with excel data
+  4.Run create lead and confirm its working
+  
+  Step to integrate into common method:
+  1.move all the common method into projectspecific method
+  2.Rename the @Dataprovider name("fetchdata")
+  3.change the excel file name as a local variable then declare this into global variable
+  Like: public String excelFile;
+  3.pass the dataprovide name to individual testcase
+  4.create individual method to setup the excel file
+  annotation of @BeforeTest 
+  5.using global variable assign the excel sheet name fr individual testcase
+example: excelFile="CreateLead";
