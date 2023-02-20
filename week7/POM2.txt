@@ -1,0 +1,86 @@
+Page object model:
+------------------
+
+Design pattern for UI automation framework
+similar technique like a UI developer design their screen
+
+pom.xml-Project object model
+
+maven build automation tool
+
+Framework:
+Its a real or conceptual structure intended to guide or support the building of a product.
+
+Why Framework?
+
+---To produce uniform output/result
+
+---To  increase the productivity
+
+---Anyone can able to produce the same result
+
+---Easy maintenance of script
+
+---To reduce the code duplicate
+
+---Support better report
+
+---Maintain uniformity
+
+What is pom?
+Design pattern to buila a automation framework
+
+Dependency:
+1.Selenium webdriver
+2.WebDriverManager
+3.TestNG
+4.Apache POI
+5.Extend Report
+
+4 package
+1.base
+2.pages(screen)
+Class
+Login
+
+-username---->Enter the username
+-password---->Enter the password
+-login------->click
+3.testcase
+4.util---ReadExcel
+
+ClassRoom 1:
+Steps to setup the page object Model:
+Create four different package
+1.base
+2.pages or (Screens)
+3.testcase
+4.util---excel data
+2.Create java class for each page
+3.Create method for each action and verification in each page.
+4.Create ProjectSpecificMethod class for common code for all the testcase
+5.Extends baseclass(ProjectSpecificMethod) in all java class  pages
+
+
+
+
+
+
+
+
+ClassRoom 2:
+1.Add return statement for all the method in respective landing page
+2.Create java class for testcase(package) and extends with baseclass(ProjectSpecificMethod)
+3.create object in the class and call all method.
+
+
+ChromeDriver: chrome on WINDOWS (9df1311361bb1a158a8a3c95e50504b3)
+ChromeDriver: chrome on WINDOWS (2fbfad9aac8246f06ccf7aa6e9f82447)
+
+
+ClassRoom 3:
+
+Parallel 2 different 
+1.Remove the static keyword 
+2.Create public constructor in all the pages with driver as a aruguments
+3.pass driver in all constructor call in page and the testcase
